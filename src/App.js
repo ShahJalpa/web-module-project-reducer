@@ -9,6 +9,7 @@ import reducer, { initialState } from './reducers/index'; //import reducer and i
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState); //Use useReducer hook to get access to the application state and the dispatch function.s
+  console.log(initialState);
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -19,10 +20,11 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={0}/>
+          {/* 0(TOTAL), X(OPERATION) AND 0(MEMORY) WERE GIVEN AND UPDATED TO {state.TOTAL}, {STATE.OPERATION}, {STATE.MEMORY} */}
+            <TotalDisplay value={ state.total }/> 
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span id="operation"><b>Operation:</b> { state.operation }</span>
+              <span id="memory"><b>Memory:</b> { state.memory }</span>
             </div>
             
             <div className="row">

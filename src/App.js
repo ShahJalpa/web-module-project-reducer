@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useReducer } from 'react'; //import useReducer hook
 
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
-function App() {
+import reducer, { initialState } from './reducers/index'; //import reducer and initialState
 
+function App() {
+  const [state, dispatch] = useReducer(reducer, initialState); //Use useReducer hook to get access to the application state and the dispatch function.s
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">

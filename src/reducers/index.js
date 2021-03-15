@@ -1,4 +1,4 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY } from './../actions';
 
 /* THIS WAS GIVEN
 export const initialState = {
@@ -44,7 +44,12 @@ const reducer = (state, action) => {
                 ...state,
                 operation: action.payload
             });
-            
+        
+        case(CLEAR_DISPLAY):
+            return({
+                ...state,
+                total: 0
+            })
         default:
             return state;
     }

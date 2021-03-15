@@ -7,9 +7,16 @@ import CalcButton from './components/CalcButton';
 
 import reducer, { initialState } from './reducers/index'; //import reducer and initialState
 
+import { addOne, applyNumber } from './actions/index'; //import addOne from actions
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState); //Use useReducer hook to get access to the application state and the dispatch function.s
   console.log(initialState);
+
+  const handleAddOne = () => {
+    dispatch(addOne(1));
+  }
+
+  console.log(handleAddOne);
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -34,7 +41,8 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton onClick={handleAddOne} value={1} />
+              {/* <CalcButton value={1}/> */}
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>

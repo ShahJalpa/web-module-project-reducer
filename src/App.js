@@ -15,7 +15,6 @@ function App() {
   // const handleAddOne = () => {
   //   dispatch(addOne(1));
   // }
-
   //console.log(handleAddOne);
 
   const handleApplyNumber = (number) => {
